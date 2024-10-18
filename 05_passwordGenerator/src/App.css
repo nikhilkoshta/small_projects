@@ -1,0 +1,24 @@
+.ripple {
+position: relative;
+overflow: hidden;
+}
+
+.ripple::before {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
+background-size: 150% 150%;
+background-position: center;
+transition: transform 0.5s, opacity 1s;
+pointer-events: none;
+opacity: 0;
+transform: scale(0);
+}
+
+.ripple:active::before {
+opacity: 1;
+transform: scale(4);
+transition: transform 0.5s, opacity 1s;
+}
